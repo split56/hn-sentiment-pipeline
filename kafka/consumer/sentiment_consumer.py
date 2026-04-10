@@ -6,7 +6,8 @@ import os
 import sys
 import json
 from pathlib import Path
-from datetime import datetime,timezone
+import time
+from datetime import datetime, timezone
 import duckdb
 from confluent_kafka import Consumer, KafkaError
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
@@ -122,6 +123,8 @@ def save_to_duckdb(post, sentiment):
 
 def run_consumer():
     """read from kafka -> analyze -> save to duckdb"""
+    print("Waiting 20s for Kafka and producer to start...")
+    time.sleep(20)
     create_database()
     consumer = create_kafka_consumer()
 

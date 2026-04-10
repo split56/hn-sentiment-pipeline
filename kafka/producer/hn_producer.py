@@ -65,6 +65,9 @@ def story_to_message(story,category):
 
 def run_producer():
     """fetch Hn stories and send to kafka"""
+    print("Waiting 15s for Kafka to start...")
+    time.sleep(15)
+
     producer = create_kafka_producer()
     seen_ids = set()
 
