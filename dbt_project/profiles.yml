@@ -1,0 +1,7 @@
+hn_sentiment:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../hn_sentiment.db
+      thread: 4

@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: fct_posts
+    description: "One row per HN story — primary analytics table"
+    columns:
+      - name: post_id
+        tests:
+          - unique
+          - not_null
+      - name: sentiment_compound
+        tests:
+          - not_null
+
+  - name: dim_categories
+    description: "One row per HN category with aggregated stats"
+    columns:
+      - name: category
+        tests:
+          - unique
+          - not_null

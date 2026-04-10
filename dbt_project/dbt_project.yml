@@ -1,0 +1,24 @@
+name: hn_sentiment
+version: "1.0.0"
+config-version: 2
+
+profile: hn_sentiment
+
+model-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  hn_sentiment:
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+    mart:
+      +materialized: table
+      +schema: analytics

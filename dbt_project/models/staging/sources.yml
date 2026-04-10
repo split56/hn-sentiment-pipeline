@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: "raw hacker news posts with sentiment scores from kafka consumer"
+    tables:
+      - name: hn_posts
+        description: "one row per hn story with VADER sentiment analyis "
