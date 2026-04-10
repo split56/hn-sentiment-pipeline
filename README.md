@@ -41,7 +41,7 @@ Hacker News API        Kafka Producer       Apache Kafka       Kafka Consumer   
 ### One command to start everything
 ```bash
 docker-compose up --build -d
-
+```
 ## Project Structure
 ```
 hn-sentiment-pipeline/
