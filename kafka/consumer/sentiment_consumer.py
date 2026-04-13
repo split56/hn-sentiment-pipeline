@@ -17,8 +17,8 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent
 load_dotenv(dotenv_path=PROJECT_ROOT / ".env")
 
 KAFKA_SERVERS = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "localhost:9092")
-KAFKA_TOPIC   = os.getenv("KAFKA_TOPIC", "reddit-posts")
-DB_PATH       = os.getenv("DB_PATH", str(PROJECT_ROOT / "reddit_sentiment.db"))
+KAFKA_TOPIC   = os.getenv("KAFKA_TOPIC", "hn-posts")
+DB_PATH       = os.getenv("DB_PATH", str(PROJECT_ROOT / "hn_sentiment.db"))
 
 analyzer = SentimentIntensityAnalyzer()
 
